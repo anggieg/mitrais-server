@@ -18,6 +18,7 @@ exports.register = async (req, res) => {
   }
 
   try {
+    // if one of any mandatory fields is empty, return error
     if(data.mobileNumber === '' || data.firstName === '' || data.lastName === '' || data.email === ''){
       return res.status(200).json({
         status: 'error',
